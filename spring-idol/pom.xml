@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.rednavis</groupId>
+    <parent>
     <artifactId>sia</artifactId>
+    <groupId>com.rednavis</groupId>
     <version>1.0.0</version>
-    <packaging>pom</packaging>
+  </parent>
 
-    <name>SpringInAction</name>
+    <groupId>com.springin</groupId>
+    <artifactId>spring-idol</artifactId>
+    <version>RELEASE</version>
+
+    <name>spring-idol</name>
     <description>Add project description here</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.group>org.springframework</spring.group>
-        <spring.version>3.0.2.RELEASE</spring.version>
     </properties>
 
     <dependencies>
@@ -24,8 +26,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
 
     <build>
         <plugins>
@@ -65,11 +65,6 @@
                 </executions>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>src/main/resourses</directory>
-            </resource>
-        </resources>
     </build>
 
     <reporting>
@@ -86,8 +81,4 @@
             </plugin>
         </plugins>
     </reporting>
-  <modules>
-    <module>knights</module>
-    <module>spring-idol</module>
-  </modules>
 </project>
