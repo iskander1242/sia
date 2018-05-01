@@ -18,6 +18,9 @@ public class SpringIdolMain {
         System.out.println("=========================");
         Instrumentalist kenny =(Instrumentalist) applicationContext.getBean("kenny");
         kenny.perform();
+        System.out.println("=========================");
+        Instrumentalist denny =(Instrumentalist) applicationContext.getBean("denny");
+        denny.perform();
         applicationContext.close();
     }
 }

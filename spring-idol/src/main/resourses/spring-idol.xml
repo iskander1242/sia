@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-init-method="turnOnLights">
     <bean id="duke" class="com.springin.chapter2.Juggler">
@@ -16,7 +17,8 @@
     <!--<bean id="auditorium" class="com.springin.chapter2.Auditorium" destroy-method="turnOnLights"/>-->
     <bean id="saxophone" class="com.springin.chapter2.Saxophone"/>
     <bean id="kenny" class="com.springin.chapter2.Instrumentalist">
-        <property name="song" value="Jingle Bells"></property>
+        <property name="song" value="Jingle Bells"/>
         <property name="instrument" ref="saxophone"/>
     </bean>
+    <bean id="denny" class="com.springin.chapter2.Instrumentalist" p:instrument-ref="saxophone" p:song="Jingle Bells"/>
 </beans>
