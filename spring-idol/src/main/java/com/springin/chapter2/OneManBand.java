@@ -1,26 +1,28 @@
 package com.springin.chapter2;
 
-import java.util.Collection;
+import java.util.Map;
 
 /**
  * Created by Alexander Sokolov
  * on 5/1/18.
  */
-public class OneManBand  implements Performer{
+public class OneManBand implements Performer {
 
-    Collection<Instrument> instruments;
+    Map<String, Instrument> instruments;
+
     @Override
     public void perform() {
-        for (Instrument i :instruments){
-            i.play();
+        for (String i : instruments.keySet()) {
+            System.out.println("Playing key:" + i);
+            instruments.get(i).play();
         }
     }
 
-    public Collection<Instrument> getInstruments() {
+    public Map<String, Instrument> getInstruments() {
         return instruments;
     }
 
-    public void setInstruments(Collection<Instrument> instruments) {
+    public void setInstruments(Map<String, Instrument> instruments) {
         this.instruments = instruments;
     }
 }
