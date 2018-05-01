@@ -13,5 +13,10 @@
             <bean class="com.springin.chapter2.Sail"/>
         </constructor-arg>
     </bean>
-    <bean id="auditorium" class="com.springin.chapter2.Auditorium" destroy-method="turnOnLights"/>
+    <!--<bean id="auditorium" class="com.springin.chapter2.Auditorium" destroy-method="turnOnLights"/>-->
+    <bean id="saxophone" class="com.springin.chapter2.Saxophone"/>
+    <bean id="kenny" class="com.springin.chapter2.Instrumentalist">
+        <property name="song" value="Jingle Bells"></property>
+        <property name="instrument" ref="saxophone"/>
+    </bean>
 </beans>

@@ -15,7 +15,9 @@ public class SpringIdolMain {
         duke.perform();
         Juggler poeticDuke = (PoeticJuggler) applicationContext.getBean("poeticJuggler");
         poeticDuke.perform();
-
+        System.out.println("=========================");
+        Instrumentalist kenny =(Instrumentalist) applicationContext.getBean("kenny");
+        kenny.perform();
         applicationContext.close();
     }
 }

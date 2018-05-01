@@ -22,6 +22,13 @@ public class BraveKnight {
         System.out.println("Init method after properties are set : " + quest.toString());
     }
 
+    @PostConstruct
+    public void initItTwo() throws Exception {
+        System.out.println("BraveKnight.initItTwo");
+    }
+
+
+
     @PreDestroy
     public void cleanUp() throws Exception {
         System.out.println("+++Spring Container is destroy! Customer clean up");
