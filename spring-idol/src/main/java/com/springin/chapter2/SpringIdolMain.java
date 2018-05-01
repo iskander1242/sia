@@ -21,6 +21,29 @@ public class SpringIdolMain {
         System.out.println("=========================");
         Instrumentalist denny =(Instrumentalist) applicationContext.getBean("denny");
         denny.perform();
+        System.out.println("==========================");
+        OneManBand hank =(OneManBand) applicationContext.getBean("hank");
+        hank.perform();
         applicationContext.close();
+    }
+
+    /**
+     * Created by Alexander Sokolov
+     * on 4/30/18.
+     */
+    public static class Stage {
+        private Stage stage;
+
+        private static class StageSingletonHolder{
+          static Stage stage = new Stage();
+        }
+
+        private Stage(){
+            System.out.println("INIT STAGE");
+        }
+
+        public static Stage getInstance(){
+            return StageSingletonHolder.stage;
+        }
     }
 }

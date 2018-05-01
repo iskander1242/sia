@@ -10,15 +10,32 @@
     <bean id="poeticJuggler" class="com.springin.chapter2.PoeticJuggler">
         <constructor-arg index="0" value="7"/>
         <constructor-arg>
-            <!-- anonymous bean example-->
+            <!-- inner component example-->
             <bean class="com.springin.chapter2.Sail"/>
         </constructor-arg>
     </bean>
     <!--<bean id="auditorium" class="com.springin.chapter2.Auditorium" destroy-method="turnOnLights"/>-->
-    <bean id="saxophone" class="com.springin.chapter2.Saxophone"/>
+
+    <bean id="saxophone" class="com.springin.chapter2.instruments.Saxophone"/>
+    <bean id="cymbal" class="com.springin.chapter2.instruments.Cymbal"/>
+    <bean id="harmonica" class="com.springin.chapter2.instruments.Harmonica"/>
+    <bean id="guitar" class="com.springin.chapter2.instruments.Guitar"/>
+
     <bean id="kenny" class="com.springin.chapter2.Instrumentalist">
         <property name="song" value="Jingle Bells"/>
         <property name="instrument" ref="saxophone"/>
     </bean>
     <bean id="denny" class="com.springin.chapter2.Instrumentalist" p:instrument-ref="saxophone" p:song="Jingle Bells"/>
+    <bean id="hank" class="com.springin.chapter2.OneManBand">
+        <property name="instruments">
+            <set>
+                <ref bean="harmonica"/>
+                <ref bean="cymbal"/>
+                <!-- guitar has mentioned two times, but set deletes repeated elements  -->
+                <ref bean="guitar"/>
+                <ref bean="guitar"/>
+                <bean class="com.springin.chapter2.instruments.Saxophone"/>
+            </set>
+        </property>
+    </bean>
 </beans>
