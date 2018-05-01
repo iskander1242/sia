@@ -28,13 +28,13 @@
     <bean id="denny" class="com.springin.chapter2.Instrumentalist" p:instrument-ref="saxophone" p:song="Jingle Bells"/>
     <bean id="hank" class="com.springin.chapter2.OneManBand">
         <property name="instruments">
-            <map>
-                <entry key="GUITAR" value-ref="guitar"/>
-                <entry key="CYMBAL" value-ref="cymbal"/>
-                <!-- HARMONICA has mentioned two times, but map deletes repeated elements  -->
-                <entry key="HARMONICA" value-ref="harmonica"/>
-                <entry key="HARMONICA" value-ref="harmonica"/>
-            </map>
+            <props>
+                <prop key="GUITAR">STRUM STRUM STRUM</prop>
+                <prop key="CYMBAL">CRASH CRASH CRASH</prop>
+                <prop key="HARMONICA">HUM HUM HUM</prop>
+                <!-- CYMBAL has mentioned two times, but PROPS deletes repeated elements like MAP  -->
+                <prop key="CYMBAL">CRASH CRASH CRASH</prop>
+            </props>
         </property>
     </bean>
 </beans>

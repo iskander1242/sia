@@ -1,6 +1,6 @@
 package com.springin.chapter2;
 
-import java.util.Map;
+import java.util.Properties;
 
 /**
  * Created by Alexander Sokolov
@@ -8,21 +8,20 @@ import java.util.Map;
  */
 public class OneManBand implements Performer {
 
-    Map<String, Instrument> instruments;
+    Properties instruments;
 
     @Override
     public void perform() {
-        for (String i : instruments.keySet()) {
-            System.out.println("Playing key:" + i);
-            instruments.get(i).play();
+        for (String i : instruments.stringPropertyNames()) {
+            System.out.println("Playing key:" + i + " play: " + instruments.getProperty(i));
         }
     }
 
-    public Map<String, Instrument> getInstruments() {
+    public Properties getInstruments() {
         return instruments;
     }
 
-    public void setInstruments(Map<String, Instrument> instruments) {
+    public void setInstruments(Properties instruments) {
         this.instruments = instruments;
     }
 }

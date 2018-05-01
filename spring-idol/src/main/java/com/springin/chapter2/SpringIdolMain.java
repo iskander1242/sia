@@ -22,7 +22,7 @@ public class SpringIdolMain {
         Instrumentalist denny =(Instrumentalist) applicationContext.getBean("denny");
         denny.perform();
         System.out.println("==========================");
-        OneManBand hank =(OneManBand) applicationContext.getBean("hank");
+        Performer hank =(Performer) applicationContext.getBean("hank");
         hank.perform();
         applicationContext.close();
     }
