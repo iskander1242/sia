@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-init-method="turnOnLights">
     <bean id="duke" class="com.springin.chapter2.Juggler">
         <constructor-arg index="0" value="15"/>
     </bean>
@@ -13,4 +13,5 @@
             <bean class="com.springin.chapter2.Sail"/>
         </constructor-arg>
     </bean>
+    <bean id="auditorium" class="com.springin.chapter2.Auditorium" destroy-method="turnOnLights"/>
 </beans>
